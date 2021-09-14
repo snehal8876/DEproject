@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5%;
+    height: 100px;
+    background-color: rgba(6, 13, 14, 0.904);
+}
+nav .logo{
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(252, 246, 246);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+   
+}
+nav .links{
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .links li{
+    list-style: none;
+
+}
+nav .links li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ca4c43;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+nav .links li:hover::after{
+width: 100%;
+}
+nav .links a{
+    display: block;
+    padding: 0.5em;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+#nav-toggle{
+    position: absolute;
+    top: -100px;
+}
+nav .icon-burger{
+    display: none;
+    position: absolute;
+    right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav .icon-burger .line{
+    width: 30px;
+    height: 4px;
+background-color: white;
+margin: 5px;
+border-radius: 3px;
+transition: all .3 s ease-in-out;
+}
+/* navbar resposive in difrent devices */
+@media screen and (max-width:950px) {
+   nav .logo{
+       float: none;
+       width: auto;
+       font-size: 15px;
+       justify-content: center;
+   }
+   nav .links a{
+       font-size: 17px;
+   }
+    nav .links{
+       float: none;
+       position: fixed;
+       z-index: 9;
+       left: 30%;
+       right: 0;
+       top: 100px;
+       bottom: 100%;
+       width: auto;
+       height: auto;
+       flex-direction: column;
+       justify-content: space-around;
+       background:rgb(148, 73, 79);
+       overflow: hidden;
+       transition: all .9s ease-in-out;
+    }
+    nav .links li::after{
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #000000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+
+    /* click icon effect to click  cursor */
+    nav :checked~ .links{
+        bottom: 0;
+    }
+    nav .icon-burger{
+        display: block;
+        cursor: pointer;
+    }
+    nav :checked~ .icon-burger .line:nth-child(1){
+        transform: translateY(10px) rotate(225deg); 
+    }
+    nav :checked~ .icon-burger .line:nth-child(3){
+        transform: translateY(-10px) rotate(-225deg);
+        
+    }
+    nav :checked~ .icon-burger .line:nth-child(2){
+       opacity: 0;  
+    } 
+}
+body{
+    height: 100vh;
+    background-image:linear-gradient(to right,rgb(38, 0, 255),rgb(255, 0, 76));
+}
+.box-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+ 
+    transform: translate(-50%,-50%);
+    background:rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.input-field{
+    width: 90%;
+    padding: 10px 0;
+    margin:5px 20px;
+    border-left: 0; 
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.box-center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    margin: 20px;
+}
+.submit-btn{
+    width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background:rgb(25, 0, 255);
+    border: 0;
+    color: white;
+    outline: none;
+    border-radius: 20px;
+}
+i,.passwordf{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.passwordf{
+    font-size: 10px;
+}
+.box h4{
+    margin-top: 10px;
+    padding:20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+@media screen and (max-width:950px){
+    .box-center{
+        width: 400px;
+        position: relative;
+      margin-top: 450px;
+        background:white;
+        padding: 5px;
+        overflow: hidden;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+       
+    }  
+}
